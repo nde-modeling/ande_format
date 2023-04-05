@@ -7,6 +7,11 @@ ande_specification repository) is included in ande.pdf
 A python module for reading the ANDE format is included
 in advanced_nde.py
 
+A multi-channel interactive viewer is included in the
+SpatialNDE2 project as the ande_viewer application:
+https://thermal.cnde.iastate.edu/spatialnde2.xhtml
+https://github.com/isuthermography/spatialnde2
+
 Example data files are included in example.ande and
 SCANINFO_EG5_singleframe.ande.
 
@@ -19,3 +24,5 @@ or from Spyder / Jupyter Qtconsole via:
 
 To explore the contents of the example files at a format
 level, you can use HDF5 tools such as HDFView and h5dump.
+
+
