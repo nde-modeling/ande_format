@@ -207,12 +207,12 @@ class ande_array(ande_recording):
             return # nothing to do if there aren't any arrays
         for axis in range(len(self.ande_array_dimlen[0])): # go through each axis of the index 0 array
             inival = 0
-            if ("ande_array-axis%d_inival"%axis) in self.ande_metadata:
-                inival = float(self.ande_metadata["ande_array-axis%d_inival"%axis])
+            if ("ande_array-axis%d_offset"%axis) in self.ande_metadata:
+                inival = float(self.ande_metadata["ande_array-axis%d_offset"%axis])
                 pass
             step = 1
-            if ("ande_array-axis%d_step"%axis) in self.ande_metadata:
-                step = float(self.ande_metadata["ande_array-axis%d_step"%axis])
+            if ("ande_array-axis%d_scale"%axis) in self.ande_metadata:
+                step = float(self.ande_metadata["ande_array-axis%d_scale"%axis])
                 pass
             #import pdb
             if axis < 3:
@@ -230,8 +230,8 @@ class ande_array(ande_recording):
                 coord = self.ande_metadata["ande_array-axis%d_coord"%axis]
                 pass
             units = "meters"
-            if ("ande_array-axis%d_inival-units"%axis) in self.ande_metadata:
-                units = self.ande_metadata["ande_array-axis%d_inival-units"%axis]
+            if ("ande_array-axis%d_offset-units"%axis) in self.ande_metadata:
+                units = self.ande_metadata["ande_array-axis%d_offset-units"%axis]
                 pass
             setattr(self,"axis%d"%axis,inival+step*np.arange(self.ande_array_dimlen[0][axis]))
             setattr(self,"extent%d"%axis,(inival-step/2,inival+self.ande_array_dimlen[0][axis]*step-step/2))
